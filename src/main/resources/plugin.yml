@@ -1,0 +1,8 @@
+name: LansLib
+version: '${project.version}'
+main: fr.ludovicans.lanslib.LansLib
+api-version: 1.19
+prefix: LansLib
+authors: [ LudovicAns ]
+description: My personal library for Paper plugin.
+website: https://github.com/LudovicAns

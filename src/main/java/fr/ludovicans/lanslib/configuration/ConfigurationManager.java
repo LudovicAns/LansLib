@@ -104,7 +104,7 @@ public class ConfigurationManager {
     }
 
     private void log(Level level, String message) {
-        plugin.getLogger().log(level, "[TerraWildAPI] " + message);
+        plugin.getLogger().log(level, "[LansLib] " + message);
     }
 
     public Map<File, FileConfiguration> getFilesMap() {

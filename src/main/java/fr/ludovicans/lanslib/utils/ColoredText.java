@@ -3,6 +3,7 @@ package fr.ludovicans.lanslib.utils;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 
+@SuppressWarnings("unused")
 public class ColoredText {
 
     private final String coloredText;

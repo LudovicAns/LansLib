@@ -29,7 +29,7 @@
 
 ## Download
 
-You can [download](https://github.com/LudovicAns/LansLib/releases/download/v1.1.0/LansLib-1.1.0.jar) latest version or
+You can [download](https://github.com/LudovicAns/LansLib/releases/download/v1.2.0/LansLib-1.2.0.jar) latest version or
 download [specific version](https://github.com/LudovicAns/LansLib/releases).
 
 ## Credits

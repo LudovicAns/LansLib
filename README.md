@@ -22,6 +22,7 @@
 * RyseInventory integrated *(see <a href="#credits">Credits</a>)*
 * Configuration Manager
 * Create colored text using ColoredText class
+* ACF included
 
 ## How To Use
 

@@ -20,15 +20,15 @@ import java.util.logging.Level;
 @SuppressWarnings("unused")
 public class ConfigurationManager {
 
-    private final Plugin plugin;
-    private final Map<File, FileConfiguration> filesMap = new HashMap<>();
-    private Level loggingLevel;
+    @NotNull private final Plugin plugin;
+    @NotNull private final Map<File, FileConfiguration> filesMap = new HashMap<>();
+    @NotNull private Level loggingLevel;
 
 
     /**
      * @param plugin instance.
      */
-    public ConfigurationManager(@NotNull Plugin plugin) {
+    public ConfigurationManager(@NotNull final Plugin plugin) {
         this.plugin = plugin;
         this.loggingLevel = Level.WARNING;
     }
@@ -37,7 +37,7 @@ public class ConfigurationManager {
      * @param plugin instance.
      * @param loggingLevel of the manager.
      */
-    public ConfigurationManager(@NotNull Plugin plugin, @NotNull Level loggingLevel) {
+    public ConfigurationManager(@NotNull final Plugin plugin, @NotNull final Level loggingLevel) {
         this(plugin);
         this.loggingLevel = loggingLevel;
     }
@@ -47,7 +47,8 @@ public class ConfigurationManager {
      * You can ignore this method, simply call
      * {@link ConfigurationManager#initNewFile(String directory, String fileName, String fileContent)}.
      */
-    @Deprecated public void setupDataFolder() {
+    @Deprecated
+    public void setupDataFolder() {
         if (!plugin.getDataFolder().exists()) {
             if (plugin.getDataFolder().mkdir()) {
                 log(Level.INFO, "✅ DataFolder has been created.");
@@ -69,15 +70,15 @@ public class ConfigurationManager {
      * @param fileName    the name of your new file.
      * @param fileContent the content of the file.
      */
-    public void initNewFile(String directory, String fileName, String fileContent) {
-        char sep = File.separatorChar;
-        File directoryFile = new File(plugin.getDataFolder().getAbsolutePath() + sep + directory);
+    public void initNewFile(@NotNull final String directory, @NotNull final String fileName, @NotNull final String fileContent) {
+        final char sep = File.separatorChar;
+        final File directoryFile = new File(plugin.getDataFolder().getAbsolutePath() + sep + directory);
+
         if (directoryFile.mkdirs()) {
             log(Level.INFO, "✅ The directory " + directory + " has been created successfully.");
         }
 
-
-        File file = new File(directoryFile.getAbsolutePath() + sep + fileName);
+        final File file = new File(directoryFile.getAbsolutePath() + sep + fileName);
         if (!file.exists()) {
             try {
                 if (file.createNewFile()) {
@@ -85,7 +86,7 @@ public class ConfigurationManager {
                 }
             } catch (IOException ignored) { }
 
-            try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8)) {
+            try (final OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8)) {
                 writer.write(fileContent);
                 writer.flush();
             } catch (IOException ignored) { }
@@ -93,7 +94,7 @@ public class ConfigurationManager {
             log(Level.INFO, "✅ The configuration file " + fileName + " has been loaded successfully.");
         }
 
-        YamlConfiguration fileCFG = YamlConfiguration.loadConfiguration(file);
+        final YamlConfiguration fileCFG = YamlConfiguration.loadConfiguration(file);
         filesMap.put(file, fileCFG);
     }
 
@@ -114,7 +115,7 @@ public class ConfigurationManager {
      *
      * @param name of the file.
      */
-    public void reloadFile(String name) {
+    public void reloadFile(@NotNull final String name) {
         if (getConfigurationFile(name) == null) return;
         filesMap.forEach((file, fileConfiguration) -> {
             if (file.getName().equalsIgnoreCase(name)) {
@@ -132,13 +133,16 @@ public class ConfigurationManager {
      * @param name of the configuration file.
      * @return the fileconfiguration or null if {@link ConfigurationManager#filesMap} doesn't contain a file with that name.
      */
-    @Nullable public FileConfiguration getConfigurationFile(String name) {
-        AtomicReference<FileConfiguration> fileCFG = new AtomicReference<>(null);
+    @Nullable
+    public FileConfiguration getConfigurationFile(@NotNull final String name) {
+        final AtomicReference<FileConfiguration> fileCFG = new AtomicReference<>(null);
+
         filesMap.forEach((file, fileConfiguration) -> {
             if (file.getName().equalsIgnoreCase(name)) {
                 fileCFG.set(fileConfiguration);
             }
         });
+
         return fileCFG.get();
     }
 
@@ -149,7 +153,7 @@ public class ConfigurationManager {
      * @param level of the message.
      * @param message to log.
      */
-    private void log(Level level, String message) {
+    private void log(@NotNull final Level level, @NotNull final String message) {
         if (level.intValue() >= loggingLevel.intValue()) {
             plugin.getLogger().log(level, "[LansLib] " + message);
         }
@@ -160,7 +164,8 @@ public class ConfigurationManager {
      *
      * @return map of File with its FileConfiguration.
      */
-    @NotNull public Map<File, FileConfiguration> getFilesMap() {
+    @NotNull
+    public Map<File, FileConfiguration> getFilesMap() {
         return filesMap;
     }
 

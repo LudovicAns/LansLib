@@ -1,7 +1,7 @@
 name: LansLib
 version: '${project.version}'
 main: fr.ludovicans.lanslib.LansLib
-api-version: 1.19
+api-version: 1.17
 prefix: LansLib
 authors: [ LudovicAns ]
 description: My personal library for Paper plugin.

@@ -22,7 +22,9 @@
 * RyseInventory integrated *(see <a href="#credits">Credits</a>)*
 * Configuration Manager
 * Create colored text using ColoredText class
-* ACF included
+* ACF included *(see <a href="#credits">Credits</a>)*
+* Item builder 
+* Inventory filler
 
 ## How To Use
 
@@ -30,7 +32,7 @@
 
 ## Download
 
-You can [download](https://github.com/LudovicAns/LansLib/releases/download/v1.4.1/LansLib-1.4.1.jar) latest version or
+You can [download](https://github.com/LudovicAns/LansLib/releases/download/v1.5.0/LansLib-1.5.0.jar) latest version or
 download [specific version](https://github.com/LudovicAns/LansLib/releases).
 
 ## Credits
@@ -38,6 +40,7 @@ download [specific version](https://github.com/LudovicAns/LansLib/releases).
 This software uses the following open source packages:
 
 - [RyseInventory](https://github.com/RyseInventory/RyseInventory) - Inventory manager inspired by SmartInvs.
+- [ACF]() - WIP.
 
 ## License
 

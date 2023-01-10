@@ -40,7 +40,7 @@ download [specific version](https://github.com/LudovicAns/LansLib/releases).
 This software uses the following open source packages:
 
 - [RyseInventory](https://github.com/RyseInventory/RyseInventory) - Inventory manager inspired by SmartInvs.
-- [ACF]() - WIP.
+- [ACF](https://github.com/aikar/commands) - Java Command Dispatch Framework.
 
 ## License
 

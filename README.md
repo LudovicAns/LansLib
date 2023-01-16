@@ -25,6 +25,7 @@
 * ACF included *(see <a href="#credits">Credits</a>)*
 * Item builder 
 * Inventory filler
+* Utility class for LuckPermsAPI
 
 ## How To Use
 
@@ -32,7 +33,7 @@
 
 ## Download
 
-You can [download](https://github.com/LudovicAns/LansLib/releases/download/v1.5.0/LansLib-1.5.0.jar) latest version or
+You can [download](https://github.com/LudovicAns/LansLib/releases/download/v1.6.0/LansLib-1.6.0.jar) latest version or
 download [specific version](https://github.com/LudovicAns/LansLib/releases).
 
 ## Credits

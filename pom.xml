@@ -6,7 +6,7 @@
 
     <groupId>fr.ludovicans</groupId>
     <artifactId>LansLib</artifactId>
-    <version>1.5.0</version>
+    <version>1.6.0</version>
     <packaging>jar</packaging>
 
     <name>LansLib</name>
@@ -41,11 +41,11 @@
                     <relocations>
                         <relocation>
                             <pattern>co.aikar.commands</pattern>
-                            <shadedPattern>fr.ludovicans.lanslib.acf</shadedPattern> <!-- Replace this -->
+                            <shadedPattern>fr.ludovicans.lanslib.acf</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>co.aikar.locales</pattern>
-                            <shadedPattern>fr.ludovicans.lanslib.locales</shadedPattern> <!-- Replace this -->
+                            <shadedPattern>fr.ludovicans.lanslib.locales</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>
@@ -98,6 +98,12 @@
             <groupId>io.github.rysefoxx.inventory</groupId>
             <artifactId>RyseInventory-Plugin</artifactId>
             <version>1.5.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>net.luckperms</groupId>
+            <artifactId>api</artifactId>
+            <version>5.4</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
